@@ -21,13 +21,16 @@
 </head>
 <body>
 
+
     <div class="container-fluid">
         <h1 class="p-4" style="text-align: center;">Animal Hunt by Satish Vagulapuram</h1><br>
         <p style="color:blue;text-align: center;" >Click on the squares to search for wild life</p>
         <p id="tries" style="color:chocolate;text-align: center;">Number of tries zero</p>
         <p id="distance" style="color:darkgoldenrod;text-align: center;">Distance is unknown</p>
       
-        <div class="container">    
+        <div class="container"> 
+          <button type="button" class="btn btn-primary" onclick="newGame()"> Reset </button>
+          <br><br>   
           <div class="row">
               <div class="col-sm-2"><img id="image-0" src="Plant.jpg" height="200px" width="200px" onclick="check(0)"></div>
               <div class="col-sm-2"><img id="image-1" src="Plant.jpg" height="200px" width="200px" onclick="check(1)"></div>
@@ -99,6 +102,19 @@
                 }
             }
         }
+        // Bonus 
+        function newGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i < 24; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "Lion.jpg"
+
+            }
+        }
+
+    
   </script>
 </body>
 </html>
